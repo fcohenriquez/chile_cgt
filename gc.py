@@ -8,26 +8,6 @@ Created on Thu May 20 21:42:12 2021
 
 
 
-'''
-lim_l=[0, 13.5, 30, 50, 70, 90, 120, 310]
-lim_u=lim_l[1:]+[math.inf]
-tasa=[0, 0.04, 0.08, 0.135, 0.23, 0.304, 0.35, 0.4]
-
-def calc_gc(ing, lim_u, lim_l, tasa):
-    if ing<lim_u and ing>=lim_l:
-        imp=(ing-lim_l)*tasa
-    elif ing>lim_u:
-        imp=(lim_u-lim_l)*tasa
-    else:
-        imp=0
-    return(imp)
-
-ing=40
-list(map(calc_gc,[ing]*len(lim_l),lim_u, lim_l, tasa))
-
-reduce(lambda a,b:a+b, list(map(calc_gc,[ing]*len(lim_l),lim_u, lim_l, tasa)))
-'''
-
 def gc(ing, at):
     
     from functools import reduce
