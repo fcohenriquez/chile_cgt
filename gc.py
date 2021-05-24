@@ -9,7 +9,11 @@ Created on Thu May 20 21:42:12 2021
 
 
 def gc(ing, at):
-    
+    '''
+    ing es la base imponible en pesos 
+    at es el anno tributario
+    para calcular el gc a una lista, se puede usar [gc(i,at) for i in lista_ing]
+    '''
     from functools import reduce
     uta_at={2004:356868, 2005:363696, 2006:378852, 2007:386472, 2008:410664,
             2009:451824, 2010:442356, 2011:451260, 2012:468252, 2013:482472,
