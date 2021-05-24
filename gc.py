@@ -3,7 +3,7 @@
 """
 Created on Thu May 20 21:42:12 2021
 
-@author: franciscohenriquez
+@author: Nestor Gallegos y Francisco Henriquez
 """
 
 
@@ -33,6 +33,7 @@ def gc(ing, at):
     ing=ing/uta
     lim_u=lim_l[1:]+[float('inf')]
     
+    '''
     def calc_gc(ing, lim_u, lim_l, tasa):
         if ing>lim_l and ing<=lim_u:
             imp=(ing-lim_l)*tasa
@@ -40,6 +41,11 @@ def gc(ing, at):
             imp=(lim_u-lim_l)*tasa
         else:
             imp=0
+        return(imp)
+    '''
+    
+    def calc_gc(ing, lim_u, lim_l, tasa):
+        imp=(min(lim_u, max(ing,lim_l))-lim_l)*tasa
         return(imp)
     
     return(round(reduce(lambda a,b:a+b, list(map(calc_gc,[ing]*len(lim_l),lim_u, lim_l, tasa)))*uta))
